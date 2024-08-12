@@ -1,0 +1,5 @@
+<meta>
+    <info name="ifp-loader" author="thealex-br" type="script" version="1.0.0"/>
+    <script src="client.lua" type="client"/>
+    <file src="anims/*.ifp"/>
+</meta>
