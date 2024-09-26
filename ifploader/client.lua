@@ -27,7 +27,9 @@ local function loadAllFiles()
 	local files = pathListDir("/anims")
 	for _, file in ipairs(files) do
 		local fileName = "anims/"..file
-		if fileGetContents(fileName) then
+		local theFile = fileOpen(fileName, true)
+		if fileGetContents(theFile) then
+			fileClose(theFile)
 			local customBlock = file:gsub(".ifp", "").."_custom"
 			loadedAnimations[customBlock] = engineLoadIFP(fileName, customBlock) or false
 		else
